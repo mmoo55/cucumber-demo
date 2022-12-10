@@ -7,6 +7,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,10 +15,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class SeleniumSteps {
-    private final WebDriver driver = new FirefoxDriver();
+    /*private final WebDriver driver = new FirefoxDriver();*/
+    private WebDriver driver;
 
     @Given("I am on the Google search page")
     public void I_visit_google() {
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\Win10Pro\\Downloads\\chromedriver.exe");
+        driver = new ChromeDriver();
         driver.get("https://www.google.com");
     }
 
