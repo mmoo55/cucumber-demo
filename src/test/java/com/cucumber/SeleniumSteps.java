@@ -19,7 +19,7 @@ public class SeleniumSteps {
     private WebDriver driver;
 
     public WebDriver getDriver(){
-        System.setProperty("webdriver.chrome.driver","src/test/resources/driver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/test/resources/driver/chromedriver");
         driver = new ChromeDriver();
         return driver;
     }
