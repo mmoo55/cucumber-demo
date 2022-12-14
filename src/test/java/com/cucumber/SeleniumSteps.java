@@ -15,19 +15,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class SeleniumSteps {
-    private final WebDriver driver = new FirefoxDriver();
-    //private WebDriver driver;
-
-    /*public WebDriver getDriver(){
+    /*private final WebDriver driver = new FirefoxDriver();*/
+    private WebDriver driver;
+    public WebDriver getDriver(){
         System.setProperty("webdriver.chrome.driver","src/test/resources/driver/chromedriver");
         driver = new ChromeDriver();
         return driver;
-    }*/
+    }
     @Given("I am on the Google search page")
     public void I_visit_google() {
-        //System.setProperty("webdriver.chrome.driver","C:\\Users\\Win10Pro\\Downloads\\chromedriver.exe");
-        //driver = new ChromeDriver();
-        //getDriver();
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\Win10Pro\\Downloads\\chromedriver.exe");
+        driver = new ChromeDriver();
+        getDriver();
         driver.get("https://www.google.com");
     }
 
@@ -53,7 +52,7 @@ public class SeleniumSteps {
 
     @After()
     public void closeBrowser() {
-        driver.quit();
-        /*getDriver().quit();*/
+        /*driver.quit();*/
+        getDriver().quit();
     }
 }
